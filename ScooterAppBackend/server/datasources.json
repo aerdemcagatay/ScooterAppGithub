@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "AtlasMongo": {
+    "host": "",
+    "port": 0,
+    "url": "mongodb+srv://acagatay14:Tanismabitti1-@scooterappdb-xm4vy.mongodb.net/test?retryWrites=true",
+    "database": "",
+    "password": "admin",
+    "name": "AtlasMongo",
+    "user": "admin",
+    "connector": "mongodb"
+  }
+}

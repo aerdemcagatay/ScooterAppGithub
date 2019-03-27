@@ -1,0 +1,45 @@
+{
+  "name": "Scooter",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "uniqueID": {
+      "type": "number",
+      "required": true
+    },
+    "scooterLocation": {
+      "type": "geopoint",
+      "required": true
+    },
+    "remainingBattery": {
+      "type": "number",
+      "required": true,
+      "default": 100
+    },
+    "isLocked": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "usingCustomer": {
+      "type": "string",
+      "required": true,
+      "default": "\"none\""
+    },
+    "sessionStartTime": {
+      "type": "date",
+      "required": true
+    },
+    "sessionEndTime": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
