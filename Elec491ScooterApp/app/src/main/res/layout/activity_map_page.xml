@@ -49,6 +49,24 @@
         tools:context=".MapPage" />
 
 
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:backgroundTint="@color/colorAccent"
+            app:fabSize="normal"
+            android:src="@drawable/ic_camera"
+            android:id="@+id/cameraButton"
+            />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
 </android.support.v4.widget.DrawerLayout>
 
 
