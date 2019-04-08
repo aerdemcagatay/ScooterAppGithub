@@ -2,6 +2,7 @@ package com.example.android.elec491scooterapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.android.elec491scooterapp.Fragments.PaymentFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,10 +26,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapPage extends FragmentActivity implements OnMapReadyCallback,NavigationView.OnNavigationItemSelectedListener {
+public class MapPage extends FragmentActivity implements OnMapReadyCallback,NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
 
     private GoogleMap mMap;
     private DrawerLayout drawer;
+    private FloatingActionButton cameraButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class MapPage extends FragmentActivity implements OnMapReadyCallback,Navi
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        cameraButton = findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         drawer = findViewById(R.id.drawer_layout);
@@ -112,5 +117,11 @@ public class MapPage extends FragmentActivity implements OnMapReadyCallback,Navi
     }
 
 
-
+    @Override
+    public void onClick(View view) {
+        if(view == cameraButton){
+            Intent intent = new Intent(MapPage.this, ScanPage.class);
+            startActivity(intent);
+        }
+    }
 }

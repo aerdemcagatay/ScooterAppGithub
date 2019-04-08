@@ -31,4 +31,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     //Google Locations
     implementation 'com.google.android.gms:play-services-location:15.0.1'
+    //floating button dependency
+    implementation 'com.android.support:design:27.1.1'
+    //Camera dependency
+    implementation 'com.google.android.gms:play-services-vision:15.0.1'
 }
