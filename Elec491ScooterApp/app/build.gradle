@@ -35,4 +35,6 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     //Camera dependency
     implementation 'com.google.android.gms:play-services-vision:15.0.1'
+    //MongoDB
+    implementation 'org.mongodb:mongodb-driver:3.4.2'
 }

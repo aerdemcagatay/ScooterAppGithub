@@ -14,6 +14,10 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.*;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
+
 import org.json.JSONObject;
 
 import org.json.JSONObject;
@@ -33,8 +37,14 @@ public class SigninPage extends AppCompatActivity implements View.OnClickListene
     public static AsyncHttpClient client = new AsyncHttpClient();
     public static Customer user;
 
-    public static String url = "mongodb+srv://admin:admin@scooterappdb-xm4vy.mongodb.net/test?retryWrites=true";
+    public static String url = "https://scooterapploopback.appspot.com/api/";
     private int minUsernameLength = 3, maxUsernameLength = 14;
+
+    //MongoClientURI uri = new MongoClientURI(
+          //  "mongodb+srv://admin:admin@scooterappdb-xm4vy.mongodb.net/test?retryWrites=true");
+
+    //MongoClient mongoClient = new MongoClient(uri);
+    //MongoDatabase database = mongoClient.getDatabase("test");
 
 
     @Override
@@ -52,7 +62,10 @@ public class SigninPage extends AppCompatActivity implements View.OnClickListene
 
         buttonSignin.setOnClickListener(this);
         textViewSignUp.setOnClickListener(this);
-        shortcut.setOnClickListener(this);
+
+
+
+
     }
 
 
@@ -82,9 +95,8 @@ public class SigninPage extends AppCompatActivity implements View.OnClickListene
 
     void login(RequestParams params)
     {
-
         System.out.println("Main Screen: Sending Login Request to Server");
-        client.post(url + "Customers", params, new AsyncHttpResponseHandler()
+        client.post(url + "Users/login", params, new AsyncHttpResponseHandler()
         {
             @Override
             public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] response) {
@@ -155,9 +167,6 @@ public class SigninPage extends AppCompatActivity implements View.OnClickListene
 
         }else if(view == textViewSignUp ){
             Intent intent = new Intent(SigninPage.this, SignupPage.class);
-            startActivity(intent);
-        }else if (view == shortcut){
-            Intent intent = new Intent(SigninPage.this, MapPage.class);
             startActivity(intent);
         }
 
