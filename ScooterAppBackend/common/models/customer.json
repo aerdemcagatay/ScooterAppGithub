@@ -1,10 +1,16 @@
 {
   "name": "Customer",
-  "base": "PersistedModel",
+  "plural": "Customers",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
+  "hidden": [
+    "emailVerified",
+    "realm",
+    "id"
+  ],
   "properties": {
     "username": {
       "type": "string",
