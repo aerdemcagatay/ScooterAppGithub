@@ -19,6 +19,10 @@
     "password": {
       "type": "string",
       "required": true
+    },    
+    "email": {
+      "type": "string",
+      "required": false
     },
     "balance": {
       "type": "number",
@@ -26,10 +30,6 @@
       "default": 0
     },
     "name": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
       "type": "string",
       "required": true
     },
